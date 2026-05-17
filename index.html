@@ -85,7 +85,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        /* 时间线样式 - 移动端优化 */
+        /* 时间线样式 - 移动端修复 */
         .timeline::before {
             content: '';
             position: absolute;
@@ -98,11 +98,21 @@
         }
         @media (max-width: 768px) {
             .timeline::before {
-                left: 2rem;
+                left: 24px;
             }
             .timeline-dot {
-                left: 2rem !important;
+                left: 24px !important;
                 transform: translate(-50%, 0) !important;
+            }
+            .timeline .flex {
+                flex-direction: column !important;
+                gap: 16px !important;
+            }
+            .timeline .flex > div {
+                width: 100% !important;
+                padding: 0 !important;
+                text-align: left !important;
+                margin-left: 20px !important;
             }
         }
     </style>
